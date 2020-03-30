@@ -32,6 +32,20 @@ cc_binary(
     ],
 )
 
+cc_binary(
+    name = "test_epsilon",
+    srcs = ["test_epsilon.cc"],
+    deps = [
+        ":animals_and_carrots",
+        "//differential_privacy/algorithms:confidence_interval_cc_proto",
+        "//differential_privacy/algorithms:util",
+        "//differential_privacy/proto:data_cc_proto",
+        "//differential_privacy/proto:util-lib",
+        "@com_google_absl//absl/flags:flag",
+        "@com_google_absl//absl/strings:str_format",
+    ],
+)
+
 cc_library(
     name = "animals_and_carrots",
     srcs = ["animals_and_carrots.cc"],
